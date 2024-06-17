@@ -8,7 +8,7 @@ public class ContaTerminal {
         String nomeCliente;
         String agencia;
         double saldo;
-        DecimalFormat df = new DecimalFormat("#.00");
+        DecimalFormat df = new DecimalFormat("0.00");
        
         System.out.println("Por favor digite o numero da sua conta: ");
         numero = Integer.parseInt(System.console().readLine());
@@ -19,7 +19,7 @@ public class ContaTerminal {
         System.out.println("Por favor digite o saldo a ser depositado:");
         saldo = df.parse(System.console().readLine()).doubleValue();
         
-        System.out.println("Ola " + nomeCliente + ", obrigado por criar uma conta em nosso banco, sua agencia e (" + agencia +
-        "),conta ("+ numero +") e seu saldo (" + saldo + ") ja esta disponivel para saque.");
+        System.out.println("Ola " + nomeCliente + ", obrigado por criar uma conta em nosso banco, sua agencia e " + agencia +
+        ",conta "+ numero +" e seu saldo " + saldo + " ja esta disponivel para saque.");
     }
 }
