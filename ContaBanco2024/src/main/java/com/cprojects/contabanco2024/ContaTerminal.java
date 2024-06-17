@@ -1,3 +1,5 @@
+package com.cprojects.contabanco2024;
+
 import java.text.DecimalFormat;
 
 public class ContaTerminal {
@@ -5,7 +7,9 @@ public class ContaTerminal {
         int numero;
         String nomeCliente;
         String agencia;
-        DecimalFormat saldo;
+        double saldo;
+        DecimalFormat df = new DecimalFormat("#.00");
+       
         System.out.println("Por favor digite o numero da sua conta: ");
         numero = Integer.parseInt(System.console().readLine());
         System.out.println("Por favor digite o numero da agencia: ");
@@ -13,9 +17,9 @@ public class ContaTerminal {
         System.out.println("Por favor digite o nome do cliente: ");
         nomeCliente = System.console().readLine();
         System.out.println("Por favor digite o saldo a ser depositado:");
+        saldo = df.parse(System.console().readLine()).doubleValue();
         
-        saldo = new DecimalFormat (System.console().readLine());
-        System.out.println("Olá " + nomeCliente + ", obrigado por criar uma conta em nosso banco, sua agência é " + agencia +
-        ",conta"+ numero +" e seu saldo " + saldo.format(saldo) + " já está disponivel para saque.");
+        System.out.println("Ola " + nomeCliente + ", obrigado por criar uma conta em nosso banco, sua agencia e (" + agencia +
+        "),conta ("+ numero +") e seu saldo (" + saldo + ") ja esta disponivel para saque.");
     }
 }
